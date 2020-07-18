@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CFDI</title>
+</head>
+<body>
+    <div class="DivGral">
+        <!-- Datos del emisor titulos-->
+        <table class="DivDatosEmisor">
+            <tr>
+                <th>
+                    <h4>Representación impresa del recibo CFDI</h4>
+                </th>
+            </tr>
+        </table>
+        <table class="DivDatosEmisor">
+            <thead>
+                <tr class="bgDiv">
+                    <th width="950px">
+                        <h5>Datos del emisor</h5>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+
+        <!-- Datos del emisor-->
+        <table class="DivDatosEmisor">
+            <tr>
+                <td><h6>Nombre</h6></td>
+                <td>SERVICIOS DGTX MÉXICO, S DE RL DE CV</td>
+                <td></td>
+                <td></td>
+                <td><h6>Versión</h6></td>
+                <td>3.3</td>
+            </tr>
+            <tr>
+                <td><h6>Complemento</h6></td>
+                <td>1.2</td>
+                <td><h6>RFC</h6></td>
+                <td>SDM0708168H3</td>
+                <td><h6>Registro patronal</h6></td>
+                <td>Y6077755103</td>
+            </tr>
+            <tr>
+                <td><h6>Fecha</h6></td>
+                <td>2019-12-18T13:08:54</td>
+                <td></td>
+                <td></td>
+                <td><h6>C.P. Expedición</h6></td>
+                <td>05349</td>
+            </tr>
+            <tr>
+                <td><h6>Núm. Certificado</h6></td>
+                <td>00001000000407300794</td>
+                <td></td>
+                <td></td>
+                <td><h6>Descripción</h6></td>
+                <td>Pago de nómina</td>
+            </tr>
+            <tr>
+                <td><h6>Valor nómina</h6></td>
+                <td>1.2</td>
+            </tr>
+        </table>
+
+        <!--Datos del receptor-->
+        <div class="bgDiv"><h5>Datos del receptor</h5></div>
+        <table>
+            <tr>
+                <td><h6>Núm. Empleado</h6></td>
+                <td>@Model.Nomina.Receptor.NumEmpleado</td>
+                <td><h6>Nombre</h6></td>
+                <td>@Model.Receptor.Nombre</td>
+                <td><h6>Núm. IMSS</h6></td>
+                <td>@Model.Nomina.Receptor.NumSeguridadSocial</td>
+            </tr>
+            <tr>
+                <td><h6>RFC</h6></td>
+                <td>@Model.Receptor.Rfc</td>
+                <td><h6>CURP</h6></td>
+                <td>@Model.Nomina.Receptor.Curp</td>
+                <td><h6>Sindicalizado</h6></td>
+                <td>@Model.Nomina.Receptor.Sindicalizado</td>
+                <td><h6>Entidad federativa</h6></td>
+                <td>@Model.Nomina.Receptor.ClaveEntFed</td>
+            </tr>
+            <tr>
+                <td><h6>Departamento</h6></td>
+                <td>@Model.Nomina.Receptor.Departamento</td>
+                <td><h6>Puesto</h6></td>
+                <td>@Model.Nomina.Receptor.Puesto</td>
+            </tr>
+            <tr>
+                <td><h6>Tipo jornada</h6></td>
+                <td>@Model.Nomina.Receptor.TipoJornada.ToString("D2")</td>
+                <td><h6>Riesgo puesto</h6></td>
+                <td>@Model.Nomina.Receptor.RiesgoPuesto</td>
+                <td><h6>Contrato</h6></td>
+                <td>@Model.Nomina.Receptor.TipoContrato.ToString("D2")</td>
+                <td><h6>Periodicidad pago</h6></td>
+                <td>@Model.Nomina.Receptor.PeriodicidadPago.ToString("D2")</td>
+            </tr>
+            <tr>
+                <td><h6>SDI</h6></td>
+                <td>@Model.Nomina.Receptor.SalarioBaseCotApor</td>
+                <td><h6>Días pagados</h6></td>
+                <td>@Model.Nomina.NumDiasPagados.ToString("0.##")</td>
+                <td><h6>Fecha de ingreso</h6></td>
+                <td>@Model.Nomina.Receptor.FechaInicioRelLaboral.ToString("yyyy-MM-dd")</td>
+                <td><h6>Sem. Antigüedad</h6></td>
+                <td>@Model.Nomina.Receptor.Antiguedad</td>
+            </tr>
+            <tr>
+                <td><h6>Fecha de pago</h6></td>
+                <td>@Model.Nomina.FechaPago.ToString("yyyy-MM-dd")</td>
+                <td><h6>Fecha inicio pago</h6></td>
+                <td>@Model.Nomina.FechaInicialPago.ToString("yyyy-MM-dd")</td>
+                <td><h6>Fecha fin pago</h6></td>
+                <td>@Model.Nomina.FechaFinalPago.ToString("yyyy-MM-dd")</td>
+                <td><h6>Cuenta bancaria</h6></td>
+                <td>@Model.Nomina.Receptor.CuentaBancaria</td>
+            </tr>
+            <tr>
+                <td><h6>Forma de pago</h6></td>
+                <td>@Model.FormaPago</td>
+                <td><h6>Método de pago</h6></td>
+                <td>@Model.MetodoPago</td>
+                <td><h6>Moneda</h6></td>
+                <td>@Model.Moneda</td>
+                <td><h6>Tipo de nómina</h6></td>
+                <td>@Model.Nomina.TipoNomina</td>
+            </tr>
+            <tr>
+                <td><h6>Clave producto</h6></td>
+                <td>84111505</td>
+                <td><h6>Núm. Días paga</h6></td>
+                <td>15</td>
+                <td><h6>Importe</h6></td>
+                <td>16200.00</td>
+                <td><h6>Descuento</h6></td>
+                <td>6748.80</td>
+            </tr>
+            <tr>
+                <td><h6>Subtotal</h6></td>
+                <td>16200.00</td>
+                <td><h6>Total</h6></td>
+                <td>9451.20</td>
+                <td><h6>Clave unidad</h6></td>
+                <td>ACT</td>
+                <td><h6>Uso CFDI</h6></td>
+                <td>P01</td>
+            </tr>
+            <tr>
+                <td><h6>Cantidad</h6></td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <!--DIV "Percepciones y Deducciones"-->
+        <div style="border: 1px solid #000;">
+            <table style="background-color: #C2DCEF; border-bottom: 1px solid #000;">
+                <tr>
+                    <th>
+                    <td width="730px" style="border-right: 1px solid #000;"><h5>Percepciones</h5></td>
+                    </th>
+                    <th>
+                    <td width="600px"><h5>Deducciones</h5></td>
+                    </th>
+                    </th>
+                </tr>
+            </table>
+            <table>
+                <!--Percepciones y Deducciones titulos-->
+                <tr>
+                    <td width="100px"><h6>Clave</h6></td>
+                    <td width="240px"><h6>Concepto</h6></td>
+                    <td width="40px"><h6>Tipo</h6></td>
+                    <td width="140px"><h6>Importe exento</h6></td>
+                    <td width="128px"><h6>Importe gravado</h6></td>
+                    <td width="100px"><h6>Clave</h6></td>
+                    <td width="300px"><h6>Concepto</h6></td>
+                    <td width="70px"><h6>Tipo</h6></td>
+                    <td><h6>Importe</h6></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td width="2px"></td>
+                    <td width="100px">DATO</td>
+                    <td width="240px">DATO</td>
+                    <td width="40px">DATO</td>
+                    <td width="140px">DATO</td>
+                    <td width="128px">DATO</td>
+                    <td width="100px">DATO</td>
+                    <td width="300px">DATO</td>
+                    <td width="70">DATO</td>
+                    <td>DATO</td>
+                </tr>
+            </table>
+            <!--Footer Percepciones Saldos-->
+            <table style="border-top: 1px solid #000;">
+                <tr>
+                    <td width="100px"><h6>Total Sueldo</h6></td>
+                    <td width="330px">16200.00</td><!--Total Sueldo-->
+                    <td width="140px">2700.00</td><!--Importe exento-->
+                    <td width="400px">13500.00</td><!--Importe gravado-->
+                    <td width="180px"><h6>Total deduc.</h6></td>
+                    <td>6748.80</td><!--Total deduc.-->
+                </tr>
+            </table>
+        </div>
+        <!--DIV "Otros pagos y  Información adicional"-->
+        <div style="border: 1px solid #000;">
+            <table style="background-color: #C2DCEF; border-bottom: 1px solid #000;">
+                <tr>
+                    <th>
+                    <td width="730px" style="border-right: 1px solid #000;"><h5>Otros pagos</h5></td>
+                    </th>
+                    <th>
+                    <td width="600px"><h5> Información adicional</h5></td>
+                    </th>
+                    </th>
+                </tr>
+            </table>
+            <table>
+                <!--Otros pagos encabezados-->
+                <tr>
+                    <td width="100px"><h6>Clave</h6></td>
+                    <td width="290px"><h6>Concepto</h6></td>
+                    <td width="200px"><h6>Tipo</h6></td>
+                    <td width="100px"><h6>Importe</h6></td>
+                    <!--Información adicional encabezados-->
+                    <td width="400px"><h6>Concepto</h6></td>
+                    <td width="100px"><h6>Importe</h6></td>
+                </tr>
+            </table>
+            <table style="borderw: 1px solid #000;">
+                <!--Datos de conceptos / Importe-->
+                <tr>
+                    <td width="705px"></td>
+                    <td width="430px">Importe</td>
+                    <td>16200.00</td><!--Importe-->
+                </tr>
+                <!--Datos de conceptos / Descuento-->
+                <tr>
+                    <td></td>
+                    <td>Descuento</td>
+                    <td>6748.80</td><!--Descuento-->
+                </tr>
+                <!--Desglose de conceptos / Total-->
+                <tr>
+                    <td></td>
+                    <td>Total</td>
+                    <td>9451.20</td><!--Total-->
+                </tr>
+            </table>
+            <!--Footer Otros cargos-->
+            <table style="border-top: 1px solid #000;">
+                <tr>
+                    <td width="1390px">
+                        <h6 style="text-align: center;">Tot. Otros pagos</h6>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--Imagen QR titulo-->
+        <br>
+        <table>
+            <tr>
+                <td width="280px">
+                    <div class="bgDiv"><h5>Timbre fiscal</h5></div>
+                </td>
+            </tr>
+        </table>
+
+        <!--Imagen QR-->
+        <div style="float:left;">
+            <table>
+                <tr>
+                    <td>
+                        <div class="col-4"><img src="@Model.QR" width="250" height="250"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--Sellos fiscales-->
+        <div style="float:left; position:absolute; left:370px;">
+            <table>
+                <tr>
+                    <td width="130px">
+                        <h6>Cadena Original del timbre</h6>
+                    </td>
+                    <td style="font-size: smaller;">
+                        ||1.1|5a65bddb-382b-4750-8c57-141c7c299b4a|2019-12-18T13:19:44|LSO1306189R5||H6+VqUfOPEEJdu5EsAzLyOLvym2
+                        GhHRZ/CYlU/etGWK1i/GyoaeLDMLZJTHOW9vlVKJzrnM7MM0MG26y3pSuu/wFpnKFFn8JsbNuzIK0hrVtL3U0crmImIFdVgIL
+                        5eQtp/Qnsc8B3CO+6HyxXjshHYntqxStYo9JlaKxBybCWUe3ig2qGW9zF58d+VhbDJX0+nbQghMuNZbcksC0NzpuLrgBtGRh
+                        7H+87lRvLzkoKIkGQqSzYnglp/t/fj+1MXMVXU0ih+w2TIcth11m599+rRjukXwGGBVGsFndf8ZHyYv8Yyu4Cm90GBhz/MZ0RyS
+                        DEMJBdVvGLZVlhLw/XJ75ZQ==|00001000000408254801||
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>Folio fiscal</h6>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><h6>Núm. Certificado</h6></td>
+                    <td>00001000000408254801</td>
+                </tr>
+                <tr>
+                    <td><h6>Fecha certificación</h6></td>
+                    <td>2019-12-18T13:19:44</td>
+                </tr>
+                <tr>
+                    <td><h6>Versión</h6></td>
+                    <td>1.1</td>
+                </tr>
+                <tr>
+                    <td><h6>Sello digital del emisor.</h6></td>
+                    <td style="font-size: smaller;">
+                        @Model.Certificado
+                    </td>
+                </tr>
+                <tr>
+                    <td><h6>Sello digital del SAT</h6></td>
+                    <td style="font-size: smaller;">
+                        @Model.Sello
+                    </td>
+                </tr>
+                <tr>
+                    <td><h6>UUID</h6></td>
+                    <td>UUID 5a65bddb-382b-4750-8c57-141c7c299b4a</td>
+                </tr>
+            </table>
+        </div>
+
+        <!--Footer-->
+        <div style="float:left; position:static;">
+            <table>
+                <tr>
+                    <td>
+                        Recibí de conformidad la cantidad anotada en este recibo por los conceptos en el
+                        especificados, con lo cual me han sido pagados por la empresa todos los salarios
+                        y prestaciones legales y contractuales a que pudiera tener derecho.
+                    </td>
+                    <td>
+                        <br><p>&nbsp;&nbsp;&nbsp;&nbsp;Firma empleado &nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    p {
+        text-decoration-line: overline;
+        text-align: center;
+    }
+
+    body {
+        margin: 0;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 0.8rem;
+        font-weight: 420;
+        color: #212529;
+        text-align: left;
+        background-color: #fff;
+    }
+
+    .DivGral {
+        /*background-color: #fafafa;
+    margin: 1rem;
+    padding: 1rem;
+    margin-left: 50px;
+    margin-right: 50px;*/
+    }
+
+    .DivDatosEmisor {
+        /*padding: 1rem;*/
+        margin-left: 250px;
+        margin-right: -15px;
+    }
+
+    .bgDiv {
+        background: #C2DCEF;
+    }
+
+    h1 {
+        color: #000;
+        font-weight: normal;
+        font-size: 40px;
+        font-family: Arial;
+    }
+
+    h2 {
+        color: #000;
+        font-weight: normal;
+        font-size: 35px;
+        font-family: Arial;
+    }
+
+    h3 {
+        color: #000;
+        font-weight: normal;
+        font-size: 30px;
+        font-family: Arial;
+    }
+
+    h4 {
+        color: #000;
+        font-weight: normal;
+        font-size: 17px;
+        font-family: Arial;
+        font-weight: bold;
+    }
+
+    h5 {
+        color: #000;
+        font-weight: normal;
+        font-size: 14px;
+        font-family: Arial;
+        font-weight: bold;
+        margin: 0.1rem;
+        padding: 0.2rem;
+    }
+
+    h6 {
+        color: #000;
+        font-weight: normal;
+        font-size: 12px;
+        font-family: Arial;
+        font-weight: bold;
+        margin: 0.1rem;
+        padding: 0.2rem;
+    }
+</style>
